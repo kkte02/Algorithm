@@ -1,16 +1,27 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
         String star = "*";
-        
+        StringBuilder sb = new StringBuilder(star.repeat(a));
+
         for(int i = 0; i < b; i++){
-            System.out.println(star.repeat(a));
+            bw.write(star.repeat(a));
+            bw.newLine();
         }
+        bw.flush();
+        bw.close();
+        br.close();
 
     }
 }
