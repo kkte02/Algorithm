@@ -4,16 +4,14 @@ class Solution {
         int answer = 0;
         
         Arrays.sort(d);
-        int totalSum = 0;
-    
 
         for (int j : d) {
-            totalSum += j;
-            if (totalSum <= budget) {
-                answer++;
-            } else {
-                break;
-            }
+            budget -= j;
+
+            if(budget < 0) break;
+
+            answer++;
+
         }
         
         return answer;
